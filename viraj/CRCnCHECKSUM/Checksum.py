@@ -24,13 +24,18 @@ def checksum(data: str, num_blocks: int) -> tuple[str, str]:
     for block in blocks:
         total += int(block, 2)
 
-    # binary representation of the sum (no ‘0b’ prefix)
+    # binary representation of the sum (no '0b' prefix)
     sum_bits = bin(total)[2:]
     print("sum:", sum_bits)
 
-    # one's-complement checksum, masked to block_size bits
-    mask = (1 << block_size) - 1
-    chk = (~total & mask)
+    # Handle carry wraparound in 1's complement arithmetic
+    mask = (1 << block_size) - 1  # mask for block_size bits
+    while total > mask:  # while there's a carry beyond block_size bits
+        carry = total >> block_size  # extract carry bits
+        total = (total & mask) + carry  # add carry back to lower bits
+    
+    # one's-complement checksum
+    chk = (~total) & mask
     checksum_bits = bin(chk)[2:].zfill(block_size)
 
     # concatenate data blocks and checksum for transmission

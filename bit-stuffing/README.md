@@ -1,0 +1,1 @@
+Take user input binary data and a flag pattern (of the format 01..110). Show the bit-stuffed message being transmitted (with flags), and show the result after de-stuffing

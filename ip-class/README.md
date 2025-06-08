@@ -1,0 +1,1 @@
+Take IP Address as user input (with binary and decimal input options). Determine its class using both bitwise pattern matching and checking decimal range. Show both approaches as output.

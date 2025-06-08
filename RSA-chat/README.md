@@ -25,3 +25,7 @@ In another terminal, run one or more clients:
 ```
 
 communicate using (user_id)/(message)
+
+# Usage
+
+![rsa-chat](../assets/rsa-chat.png)

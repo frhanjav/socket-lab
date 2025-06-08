@@ -1,0 +1,1 @@
+![hamming-chat](../assets/hamming-chat.png)

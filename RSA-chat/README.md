@@ -1,13 +1,13 @@
 Compile the server:
 
 ```
-g++ server_linux.cpp -o server_linux -lpthread -lstdc++
+g++ -std=c++11 server_linux.cpp -o server_linux -lpthread
 ```
 
 Compile the client:
 
 ```
-g++ client_linux.cpp -o client_linux -lpthread -lstdc++
+g++ -std=c++11 client_linux.cpp -o client_linux -lpthread
 ```
 
 Run the server:
